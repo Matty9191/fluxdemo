@@ -7,7 +7,7 @@ metadata:
   annotations:
     # Substitute your account ID and IAM service role name below.
     # eks.amazonaws.com/role-arn: arn:aws:iam::ACCOUNTNUMBER:role/EKSIAMROLE
-    eks.amazonaws.com/role-arn: arn:aws:iam::ACCOUNTID:role/CLUSTERNAME_ExternalDNSRole
+    eks.amazonaws.com/role-arn: arn:aws:iam::ACCOUNTID:role/cluster1_ExternalDNSRole
 ---
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRole
