@@ -1,11 +1,11 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: ingress
+  name: hello-ingress
   labels:
-    ingress: nginx
+    ingress: hello-nginx
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: fmep.cmcloudlab919.info
+    external-dns.alpha.kubernetes.io/hostname: gorp.DNSDOMAIN
     kubernetes.io/ingress.class: "nginx"
     cert-manager.io/cluster-issuer: "letsencrypt-staging"
     nginx.ingress.kubernetes.io/rewrite-target: /
@@ -13,15 +13,15 @@ metadata:
 spec:
   tls:
   - hosts:
-    - fmep.cmcloudlab919.info
-    secretName: fmep-tls
+    - gorp.DNSDOMAIN
+    secretName: gorp-tls
   rules:
-  - host: fmep.cmcloudlab919.info
+  - host: gorp.DNSDOMAIN
     http:
       paths:
       - path: /
         backend:
-          serviceName: nginx
+          serviceName: hello-kubernetes
           servicePort: 8080
 
 ---
