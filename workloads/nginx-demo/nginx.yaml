@@ -18,16 +18,9 @@ spec:
       labels:
         run: nginx
     spec:
-      initContainers:
-      - name: init
-        image: busybox:latest
-        command: ['/bin/sh', '-c', 'echo "Happy $(date "+%A")" > /web/index.html']
-        volumeMounts:
-        - mountPath: /web
-          name: web-content
       containers:
       - name: nginx
-        image: nginx:latest
+        image: paulbouwer/hello-kubernetes:1.7
         ports:
         - name: nginx-port
           containerPort: 80
